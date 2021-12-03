@@ -1,0 +1,15 @@
+{
+  "name": "sumipanda",
+  "version": "0.0b0",
+  "description": "A discord bot for the Selection Project Server",
+  "main": "app.js",
+  "scripts": {
+    "start": "tsc && node app.js"
+  },
+  "author": "Huzz",
+  "license": "ISC",
+  "devDependencies": {
+    "tslint": "^6.1.3",
+    "typescript": "^3.9.10"
+  }
+}
