@@ -34,7 +34,7 @@ if (process.env.CHEESEBURGER) {
                 if (globalCommands) {
                     await rest.put(
                         Routes.applicationCommands(process.env.FRIEDCHICKEN),
-                        { body: commands },
+                        { body: globalCommands },
                     );
                 }
 

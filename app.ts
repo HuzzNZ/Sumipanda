@@ -5,16 +5,18 @@ import fs from "fs";
 dotenv.config()
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] })
 
-const commandFiles = fs.readdirSync('./src/commands').filter(file => file.endsWith('.js'));
-
-for (const file of commandFiles) {
-    client.commands = new Collection();
-    const command = require(`./commands/${file}`);
-    client.commands.set(command.data.name, command);
-}
+const commandFiles = fs.readdirSync('./src/Commands').filter(file => file.endsWith('.js'));
 
 client.once('ready', () => {
-    console.log("I'm ready")
+    client.commands = new Collection();
+    console.log("\nLoading Commands...")
+    for (const file of commandFiles) {
+        const command = require(`./Commands/${file}`);
+        console.log(`~ /${command.data.name}${command.global? "(global)":""}`)
+        client.commands.set(command.data.name, command);
+    }
+
+    console.log("\nSumipanda is ready!")
 })
 
 client.on('interactionCreate', async (interaction) => {
@@ -33,5 +35,7 @@ client.on('interactionCreate', async (interaction) => {
         }
     }
 });
+
+console.log("Initializing Sumipanda...")
 
 client.login(process.env.CHEESEBURGER)

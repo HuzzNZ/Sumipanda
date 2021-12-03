@@ -15,6 +15,7 @@ interface Seiyuu {
 
 interface Unit {
     name: string
+    color: string
     members: Member[]
 }
 
@@ -43,8 +44,8 @@ export const seiyuu: Seiyuu[] = [
 ]
 
 export const units: Unit[] = [
-    { name: "9-tie", members: members },
-    { name: "Suzu☆Rena", members: [members[0], members[1]] },
-    { name: "Splasoda°", members: [members[2], members[3], members[4], members[5]] },
-    { name: "GAPsCAPs", members: [members[6], members[7], members[8]] },
+    { name: "9-tie", members: members, color: "#ec6363" },
+    { name: "Suzu☆Rena", members: [members[0], members[1]], color: "#d988ee" },
+    { name: "Splasoda°", members: [members[2], members[3], members[4], members[5]], color: "#e9bf25" },
+    { name: "GAPsCAPs", members: [members[6], members[7], members[8]], color: "#54a9df" },
 ]

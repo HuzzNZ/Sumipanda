@@ -4,8 +4,8 @@
   "description": "A discord bot for the Selection Project Server",
   "main": "app.js",
   "scripts": {
-    "start": "rm -r src && tsc && node src/app.js",
-    "commands": "rm -r src && tsc && node src/commands.js"
+    "start": "tsc && node src/app.js",
+    "commands": "tsc && node src/commands.js"
   },
   "author": "Huzz",
   "license": "ISC",
